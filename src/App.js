@@ -31,10 +31,10 @@ function App() {
   };
 
   useEffect(() => {
-    clearAllShelfs();
     // Load the books from the API
     const loadBooks = async () => {
       const books = await getAll();
+      clearAllShelfs();
 
       books.forEach((book) => {
         const setShelf = shelfSetter(book.shelf);
