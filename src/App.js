@@ -11,6 +11,12 @@ function App() {
   const [wantToRead, setWantToRead] = useState([]);
   const [read, setRead] = useState([]);
 
+  const clearAllShelfs = () => {
+    setCurrentlyReading([]);
+    setWantToRead([]);
+    setRead([]);
+  };
+
   const shelfSetter = (shelfName) => {
     switch (shelfName) {
       case "currentlyReading":
@@ -25,11 +31,11 @@ function App() {
   };
 
   useEffect(() => {
+    clearAllShelfs();
     // Load the books from the API
     const loadBooks = async () => {
       const books = await getAll();
 
-      console.log(books[0])
       books.forEach((book) => {
         const setShelf = shelfSetter(book.shelf);
         setShelf((prev) => [...prev, book]);
@@ -46,12 +52,18 @@ function App() {
     // Remove the book form its current shelf
     if (book.shelf) {
       const setShelf = shelfSetter(book.shelf);
-      setShelf((shelf) => shelf.filter((b) => b.id !== book.id));
+      setShelf((prev) => prev.filter((b) => b.id !== book.id));
     }
 
     // Add the book to the selected shelf
+    book.shelf = shelf;
     const setShelf = shelfSetter(shelf);
-    setShelf((prev) => [...prev, book]);
+    setShelf((prev) => {
+      // if the book is already in the shelf return the shelf
+      for (let b of prev) if (b.id === book.id) return prev;
+
+      return [...prev, book];
+    });
   };
 
   return (

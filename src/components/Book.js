@@ -1,5 +1,5 @@
 function Book({ book, addToShelf }) {
-  const handleChange = ({ target }) => {};
+  const handleChange = ({ target }) => addToShelf(book, target.value);
 
   return (
     <li>
