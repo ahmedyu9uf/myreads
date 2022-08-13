@@ -29,13 +29,14 @@ function App() {
     const loadBooks = async () => {
       const books = await getAll();
 
+      console.log(books[0])
       books.forEach((book) => {
         const setShelf = shelfSetter(book.shelf);
         setShelf((prev) => [...prev, book]);
       });
     };
 
-    // loadBooks();
+    loadBooks();
   }, []);
 
   const addToShelf = (book, shelf) => {

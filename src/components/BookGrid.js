@@ -1,7 +1,12 @@
-function BookGrid() {
+import Book from "../components/Book";
+
+function BookGrid({ books, addToShelf }) {
   return (
     <ol className="books-grid">
-      TODO: Add list of Books
+      {books &&
+        books.map((book) => (
+          <Book key={book.id} book={book} addToShelf={addToShelf} />
+        ))}
     </ol>
   );
 }
