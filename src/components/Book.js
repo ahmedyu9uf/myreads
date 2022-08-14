@@ -1,6 +1,12 @@
 function Book({ book, addToShelf }) {
   const handleChange = ({ target }) => addToShelf(book, target.value);
 
+  if (!book || !book.title) return <></>;
+
+  if (!book.imageLinks) book.imageLinks = { thumbnail: "" };
+
+  if (!book.authors) book.authors = [];
+
   return (
     <li>
       <div className="book">
