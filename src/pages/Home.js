@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Shelf from "../components/Shelf";
 
 function Home({ currentlyReading, wantToRead, read, addToShelf }) {
-  const shelfs = [
+  const shelves = [
     shelfObj("Currently Reading", currentlyReading),
     shelfObj("Want to Read", wantToRead),
     shelfObj("Read", read),
@@ -15,7 +15,7 @@ function Home({ currentlyReading, wantToRead, read, addToShelf }) {
       </div>
       <div className="list-books-content">
         <div>
-          {shelfs.map((shelf) => (
+          {shelves.map((shelf) => (
             <Shelf
               key={shelf.name}
               name={shelf.name}
