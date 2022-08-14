@@ -66,6 +66,19 @@ function App() {
     });
   };
 
+  // Assign books to shelves
+  const bookShelfDictionary = () => {
+    const bookShelf = {};
+
+    currentlyReading.forEach(
+      (book) => (bookShelf[book.id] = "currentlyReading")
+    );
+    wantToRead.forEach((book) => (bookShelf[book.id] = "wantToRead"));
+    read.forEach((book) => (bookShelf[book.id] = "read"));
+
+    return bookShelf;
+  };
+
   return (
     <div className="app">
       <Routes>
@@ -80,7 +93,15 @@ function App() {
             />
           }
         />
-        <Route path="/search" element={<Search addToShelf={addToShelf} />} />
+        <Route
+          path="/search"
+          element={
+            <Search
+              bookShelfDictionary={bookShelfDictionary()}
+              addToShelf={addToShelf}
+            />
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
