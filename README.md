@@ -10,6 +10,10 @@ You can also search for books and add them to one of your bookshelves.
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install the required dependencies to run the project.
+
 ### `npm start`
 
 Runs the app in the development mode.\
