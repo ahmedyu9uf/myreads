@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/myreads/home/static/css/main.23d198da.css",
-    "main.js": "/myreads/home/static/js/main.c2a12e7c.js",
+    "main.js": "/myreads/home/static/js/main.9c27222a.js",
     "index.html": "/myreads/home/index.html",
     "static/media/arrow-back.svg": "/myreads/home/static/media/arrow-back.cd079cab42defead9875.svg",
     "static/media/add.svg": "/myreads/home/static/media/add.1b5d9b6afb5557f7992c.svg",
     "static/media/arrow-drop-down.svg": "/myreads/home/static/media/arrow-drop-down.4378492a3a09dbfc31ff.svg",
     "main.23d198da.css.map": "/myreads/home/static/css/main.23d198da.css.map",
-    "main.c2a12e7c.js.map": "/myreads/home/static/js/main.c2a12e7c.js.map"
+    "main.9c27222a.js.map": "/myreads/home/static/js/main.9c27222a.js.map"
   },
   "entrypoints": [
     "static/css/main.23d198da.css",
-    "static/js/main.c2a12e7c.js"
+    "static/js/main.9c27222a.js"
   ]
 }
